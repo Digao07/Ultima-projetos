@@ -1,0 +1,20 @@
+{% extends "inicio.html" %}
+{% load bootstrap5 %}
+{% load bootstrap5 %}
+{% block principal %}
+<h1>Agendamento Banho Pet</h1>
+<p>
+    Reserve o banho para o seu Pet!
+</p>
+{%if sucesso %}
+<p class="alert alert-sucess">Mensagem enviada com sucesso!</p>
+{% else %}
+<form action="" method="post" novalidate>
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <hr>
+    <button type="submit" class="btn btn-primary">Agendar Banho</button>
+</form>
+{% endif %}
+{% endblock %}
+    
